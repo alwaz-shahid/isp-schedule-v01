@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SubCard({ day, time, sname, teacher, dat, i }) {
   return (
-    <div className='flex flex-col p-5 rounded-md my-2 shadow-lg cardhover'>
+    <div className='flex flex-col p-5 rounded-md my-2 shadow-lg cardhover dark:text-gray-100 text-gray-900 '>
       <div className='text-2xl'>
         {/* <h3 className='text-2xl font-bold uppercase py-2 bg-indigo-400'>
           {day}
