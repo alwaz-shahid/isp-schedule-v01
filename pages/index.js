@@ -1,15 +1,13 @@
 import { NextSeo } from 'next-seo';
-import { useEffect } from 'react';
-import Active from '../src/components/datetime/Active';
-import SubCard from '../src/components/datetime/SUbCard';
-import TableOne from '../src/components/datetime/TableOne';
+// import { useEffect } from 'react';
+
 import TabsComp from '../src/components/TabsComp';
-import { schedule, scheduleKeys } from '../src/utils/data';
+// import { schedule, scheduleKeys } from '../src/utils/data';
 
 export default function Home() {
-  const scheduleValues = Object.values(schedule);
+  // const scheduleValues = Object.values(schedule);
 
-  const scheduleEntries = Object.entries(schedule);
+  // const scheduleEntries = Object.entries(schedule);
 
   return (
     <>
