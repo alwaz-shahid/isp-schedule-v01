@@ -1,13 +1,20 @@
 import { useTheme } from 'next-themes';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function ThemeToggler() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+  const themeToggler = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    // alert('Theme toggled' + theme);
+  };
   return (
-    <p className='text-2xl'>
+    <p className='text-xl'>
       <button
         className='bg-gray-200 dark:bg-gray-800 rounded-full p-2'
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        onClick={themeToggler}
       >
         {theme === 'dark' ? '🌞' : '🌙'}
       </button>

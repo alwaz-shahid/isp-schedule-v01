@@ -114,3 +114,5 @@ export const schedule = {
     },
   ],
 };
+
+export const scheduleKeys = Object.keys(schedule);

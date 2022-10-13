@@ -6,12 +6,12 @@ import Layout from '../src/components/Layout';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Layout>
-        <DefaultSeo {...SEO} />
-        <ThemeProvider attribute='class'>
+      <ThemeProvider attribute='class'>
+        <Layout>
+          {/* <DefaultSeo {...SEO} /> */}
           <Component {...pageProps} />
-        </ThemeProvider>
-      </Layout>
+        </Layout>
+      </ThemeProvider>
     </>
   );
 }
