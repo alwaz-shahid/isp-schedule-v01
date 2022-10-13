@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
-import SubCard from './datetime/SUbCard';
+import SubCard from './datetime/SubCard';
 
 export default function TabsComp() {
   return (
