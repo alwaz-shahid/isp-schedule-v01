@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SubCard({ day, time, sname, teacher, dat, i }) {
   return (
-    <div className='flex flex-col p-5 rounded-md'>
+    <div className='flex flex-col p-5 rounded-md my-2 shadow-lg cardhover'>
       <div className='text-2xl'>
         {/* <h3 className='text-2xl font-bold uppercase py-2 bg-indigo-400'>
           {day}
@@ -12,8 +12,8 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
         </h3>
         <h3 className='text-2xl font-bold'>{teacher}</h3>
       </div>
-      <div className='flex '>
-        <p className='text-xl font-bold py-2'>{time[0]}</p>
+      <div className='flex p-4 border-b-2 rounded-full'>
+        <p className='text-xl font-bold py-2 inline-block mb-2'>{time[0]}</p>
 
         <span className='text-xl font-bold p-2'>-</span>
         <p className='text-xl font-bold py-2'>{time[1]}</p>

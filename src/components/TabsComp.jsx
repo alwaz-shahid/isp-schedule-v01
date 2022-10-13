@@ -15,7 +15,7 @@ export default function TabsComp() {
         ))}
       </TabList>
       {scheduleKeys.map((item, index) => (
-        <TabPanel key={index}>
+        <TabPanel className='py-2' key={index}>
           {schedule[item].map((i, ind) => (
             <SubCard
               i={ind}

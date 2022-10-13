@@ -84,7 +84,14 @@ export const schedule = {
     },
   ],
   wed: [
-    { subjects: courses.maths2, timing: ['09:00 AM', '10:30 AM'] },
+    { subject: courses.maths2, timing: ['09:00 AM', '10:30 AM'] },
+    // {
+    //   subject: {
+    //     name: 'subjects[2]',
+    //     teacher:' teachers[1]',
+    //   },
+    //   timing: ['09:00 AM', '10:30 AM'],
+    // },
 
     {
       subject: courses.oop,
