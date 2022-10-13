@@ -11,7 +11,7 @@ export default function ThemeToggler() {
     // alert('Theme toggled' + theme);
   };
   return (
-    <p className='text-xl'>
+    <p className='md:text-xl text-base'>
       <button
         className='bg-gray-200 dark:bg-gray-800 rounded-full p-2'
         onClick={themeToggler}

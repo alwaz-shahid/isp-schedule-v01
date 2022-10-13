@@ -11,7 +11,10 @@ export default function Layout({ children }) {
 }
 
 const Nav = () => (
-  <nav className='flex justify-between items-center w-full flex-1 p-2 bg-indigo-500 h-10'>
+  <nav className='flex justify-between items-center w-full  p-2 bg-sky-900 h-12 px-3'>
     <ThemeToggler />
+    <h1 className=' md:text-xl text-sm lg:text-2xl font-bold text-white'>
+      TimeTable for ADP CS (B)
+    </h1>
   </nav>
 );
