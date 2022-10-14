@@ -11,7 +11,7 @@ export default function TabsComp() {
       <TabList className='flex justify-evenly min-w-full'>
         {scheduleKeys.map((item, index) => (
           <Tab key={index}>
-            <p className='uppercase font-bold px-2 text-2xl opacity-75 lg:text-3xl text-red-600 dark:text-inherit'>
+            <p className='uppercase font-bold px-2 text-2xl  lg:text-3xl text-red-600 dark:text-inherit'>
               {item}
             </p>
           </Tab>

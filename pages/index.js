@@ -1,9 +1,16 @@
+import Head from 'next/head';
 import TabsComp from '../src/components/TabsComp';
-export default function Home() {
+
+export default function HomePage() {
   return (
     <>
+      <Head>
+        <title>Schedule</title>
+        <description>Home page</description>
+      </Head>
       <div className='flex flex-col space-y-5 flex-1 p-2'>
         {/* {JSON.stringify(scheduleKeys)} */}
+
         <TabsComp />
       </div>
     </>
