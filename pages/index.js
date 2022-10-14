@@ -6,7 +6,6 @@ export default function HomePage() {
     <>
       <Head>
         <title>Schedule</title>
-        <description>Home page</description>
       </Head>
       <div className='flex flex-col space-y-5 flex-1 p-2'>
         {/* {JSON.stringify(scheduleKeys)} */}
@@ -23,18 +22,3 @@ export async function getStaticProps() {
     props: {},
   };
 }
-
-// <TableOne
-// dat={schedule[item]}
-// key={ind}
-// day={item}
-// time={i.timing}
-// sname={i?.subject?.name}
-// teacher={i?.subject?.teacher}
-// />
-
-// import { schedule, scheduleKeys } from '../src/utils/data';
-
-// const scheduleValues = Object.values(schedule);
-
-// const scheduleEntries = Object.entries(schedule);
