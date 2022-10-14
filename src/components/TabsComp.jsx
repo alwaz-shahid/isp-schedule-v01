@@ -6,16 +6,18 @@ import SubCard from './datetime/SubCard';
 
 export default function TabsComp() {
   return (
-    <Tabs>
+    <Tabs className=''>
       <TabList className='flex justify-evenly min-w-full'>
         {scheduleKeys.map((item, index) => (
           <Tab key={index}>
-            <p className='uppercase font-bold px-2 text-3xl'>{item}</p>
+            <p className='uppercase font-bold px-2 text-3xl text-red-600 dark:text-inherit'>
+              {item}
+            </p>
           </Tab>
         ))}
       </TabList>
       {scheduleKeys.map((item, index) => (
-        <TabPanel className='py-2' key={index}>
+        <TabPanel className='p-4' key={index}>
           {schedule[item].map((i, ind) => (
             <SubCard
               i={ind}

@@ -2,10 +2,11 @@
 
 import moment from 'moment';
 
-let today = moment().format('dddd HH:mm A');
+let now = moment().format('dddd, Do MMMM YYYY, h:mm a');
+let today = moment().format('HH:mm A');
 
 let tomorrow = moment().add(1, 'days');
 
 let yesterday = moment().add(-1, 'days');
 
-export { today, tomorrow, yesterday };
+export { today, tomorrow, yesterday, now };

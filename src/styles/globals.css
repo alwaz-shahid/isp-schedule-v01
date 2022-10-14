@@ -7,7 +7,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  @apply bg-slate-300 dark:bg-gray-900;
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-[#FEF9EF] dark:bg-[#132E32] dark:text-[#EE8434] text-gray-700;
+  }
 }
 
 a {
@@ -19,7 +25,10 @@ a {
   box-sizing: border-box;
 }
 .cardhover {
-  @apply transition-all  rounded-lg shadow-lg hover:shadow-2xl;
+  @apply rounded-lg shadow-lg hover:shadow-2xl;
+}
+.anim {
+  @apply transition-all ease-linear duration-150;
 }
 /* @media (prefers-color-scheme: dark) {
   html {
