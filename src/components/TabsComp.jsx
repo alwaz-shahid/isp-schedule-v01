@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
 import SubCard from './datetime/SubCard';
 
 export default function TabsComp() {
+  useEffect(() => {}, []);
   return (
-    <Tabs className=''>
+    <Tabs>
       <TabList className='flex justify-evenly min-w-full'>
         {scheduleKeys.map((item, index) => (
           <Tab key={index}>
-            <p className='uppercase font-bold px-2 text-3xl text-red-600 dark:text-inherit'>
+            <p className='uppercase font-bold px-2 text-2xl opacity-75 lg:text-3xl text-red-600 dark:text-inherit'>
               {item}
             </p>
           </Tab>

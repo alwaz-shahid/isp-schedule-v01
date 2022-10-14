@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { now } from '../../utils/dt';
 
 export default function SubCard({ day, time, sname, teacher, dat, i }) {
+  useEffect(() => {}, []);
   return (
     <div className=' rounded-md anim my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover  border-b-2'>
       <div className='flex flex-col p-3'>

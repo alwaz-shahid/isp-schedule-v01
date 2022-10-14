@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ThemeToggler from '../ThemeToggler';
 
 export default function Layout({ children }) {
+  useEffect(() => {}, []);
   return (
-    <div className='min-h-screen min-w-full flex flex-col '>
+    <div className='min-h-screen min-w-full flex flex-col mx-auto'>
       <Nav />
       {children}
     </div>
