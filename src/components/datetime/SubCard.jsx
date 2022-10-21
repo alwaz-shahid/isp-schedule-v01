@@ -4,7 +4,7 @@ import { now } from '../../utils/dt';
 export default function SubCard({ day, time, sname, teacher, dat, i }) {
   useEffect(() => {}, []);
   return (
-    <div className=' rounded-md anim my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover  border-b-2'>
+    <div className=' rounded-md  my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover'>
       <div className='flex flex-col p-3'>
         <div className='text-2xl'>
           {/* <h3 className='text-2xl font-bold uppercase py-2 bg-indigo-400'>
@@ -38,7 +38,7 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
           </p>
         </div>
       </div>
-      <h3 className='text-2xl font-bold uppercase py-2 text-right px-2 rounded-md dark:bg-slate-700 bg-indigo-400'>
+      <h3 className='md:text-2xl text-sm font-bold uppercase py-2 text-center md:text-right px-2 rounded-md dark:bg-slate-700 bg-indigo-400'>
         {now}
       </h3>
     </div>

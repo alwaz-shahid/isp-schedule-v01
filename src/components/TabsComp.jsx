@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
 import SubCard from './datetime/SubCard';
+import RandQuo from './zenQuotes/RandQuo';
 
 export default function TabsComp() {
   useEffect(() => {}, []);
@@ -17,6 +18,7 @@ export default function TabsComp() {
           </Tab>
         ))}
       </TabList>
+      <RandQuo />
       {scheduleKeys.map((item, index) => (
         <TabPanel className='p-4' key={index}>
           {schedule[item].map((i, ind) => (

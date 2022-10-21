@@ -28,7 +28,7 @@ a {
   @apply rounded-lg shadow-lg hover:shadow-2xl;
 }
 .anim {
-  @apply transition-all ease-linear duration-150;
+  @apply transition-all ease-linear duration-75;
 }
 /* @media (prefers-color-scheme: dark) {
   html {
