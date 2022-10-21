@@ -1,30 +1,19 @@
 
-# Next.js Tailwind Css Template.
+# Lecture Schedule
 
 <hr/>
 
-![image](https://user-images.githubusercontent.com/52915358/194752929-ee17ed40-e494-4984-bc09-f43699b0a492.png)
+
 
 <hr/>
 <h1 align="center">Hi 👋, I'm Alwaz</h1>
 <h3 align="center">I'm a Full Stack developer, doing freelance.</h3>
 <hr/>
 <h4 align="left">
-This is an example of next js and tailwind css.
-A quick start template so that you can focus more on your project.
+Check your nect lecture, compter science related quotes and dictionary.
 </h4>   
 
->
-> Make your project SEO friendly with Next-Seo.
-> >Example
->
->- npx create-next-app --example [Github Repository Link] YOUR_APP_NAME
-> >
-> > Use this command to create your project.
-> 
-> - npx create-next-app --example https://github.com/alwaz-shahid/nextjs-tailwind-template YOUR_APP_NAME
-
- Here you can find live [Preview](https://next-tailwind-css-cna.netlify.app/) of the app. &copy; 2022
+ Here you can find live [Preview](https://isp-schedule-v01.vercel.app/) of the app. &copy; 2022
 
 ## Commands
 ```
