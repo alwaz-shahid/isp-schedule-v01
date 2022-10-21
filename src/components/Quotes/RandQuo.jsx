@@ -22,7 +22,7 @@ export default function RandQuo() {
     setLoading(false);
   };
   useEffect(() => {
-    // fetchData();
+    fetchData();
   }, []);
   // if (loading) {
   //   return <Loader />;
