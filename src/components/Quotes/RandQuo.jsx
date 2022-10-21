@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loader from '../Loader';
 
 const urlrand = 'https://programming-quotes-api.herokuapp.com/Quotes/random';
 export default function RandQuo() {
@@ -21,13 +22,15 @@ export default function RandQuo() {
     setLoading(false);
   };
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
+  // if (loading) {
+  //   return <Loader />;
+  // }
   return show ? (
     <div className='py-5 text-xl text-center'>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error</p>}
-
+      {loading && <Loader />}
+      {error && <p>Something went wrong</p>}
       <div className='pointer-events-none'>
         <p className=' t'>{data?.en}</p>
         <span className='text-sm'>~{data?.author}</span>
@@ -46,9 +49,30 @@ export default function RandQuo() {
       onClick={() => {
         setShow((prev) => !prev);
       }}
-      className='hover:underline p-2 cursor-pointer text-center'
+      className='p-1 m-2 max-w-fit mx-auto cursor-pointer text-center border rounded-md'
     >
-      {'show'}
+      {'Show quotes'}
     </p>
   );
 }
+
+// <div className='flex flex-col justify-center items-center'>
+//   <button
+//     className='bg-gray-200 dark:bg-gray-800 rounded-full p-2'
+//     onClick={fetchData}
+//   >
+//     🔄
+//   </button>
+//   {loading && <Loader />}
+//   {error && <p>Something went wrong</p>}
+//   {data && (
+//     <div className='flex flex-col justify-center items-center'>
+//       <p className='text-2xl font-bold text-red-600 dark:text-inherit'>
+//         {data.en}
+//       </p>
+//       <p className='text-xl font-bold text-red-600 dark:text-inherit'>
+//         {data.author}
+//       </p>
+//     </div>
+//   )}
+// </div>

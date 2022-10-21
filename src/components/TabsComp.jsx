@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
 import SubCard from './datetime/SubCard';
-import RandQuo from './zenQuotes/RandQuo';
+import RandQuo from './Quotes/RandQuo';
 
 export default function TabsComp() {
   useEffect(() => {}, []);
