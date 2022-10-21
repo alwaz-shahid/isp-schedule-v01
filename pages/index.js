@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Dictionary from '../src/components/Dictionary';
 import TabsComp from '../src/components/TabsComp';
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       <div className='flex flex-col space-y-5 flex-1 p-2'>
         <TabsComp />
       </div>
+      <Dictionary />
     </>
   );
 }

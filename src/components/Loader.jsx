@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Loader() {
   return (
-    <>
+    <div className='m-4 flex items-center justify-center min-w-full'>
       <div aria-label='Loading...' role='status'>
         <svg class='h-6 w-6 animate-spin' viewBox='3 3 18 18'>
           <path
@@ -15,6 +15,6 @@ export default function Loader() {
           ></path>
         </svg>
       </div>
-    </>
+    </div>
   );
 }

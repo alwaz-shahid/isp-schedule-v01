@@ -39,3 +39,7 @@ a {
     background: black;
   }
 } */
+
+.dict p {
+  @apply text-lg font-bold p-2 capitalize;
+}
