@@ -3,7 +3,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
 import SubCard from './datetime/SubCard';
-import RandQuo from './Quotes/RandQuo';
 
 export default function TabsComp() {
   useEffect(() => {}, []);
@@ -12,13 +11,13 @@ export default function TabsComp() {
       <TabList className='flex justify-evenly min-w-full'>
         {scheduleKeys.map((item, index) => (
           <Tab key={index}>
-            <p className='uppercase font-bold px-2 text-2xl  lg:text-3xl text-red-600 dark:text-inherit'>
+            <p className='uppercase font-bold px-2 text-2xl  lg:text-3xl  dark:text-inherit'>
               {item}
             </p>
           </Tab>
         ))}
       </TabList>
-      <RandQuo />
+
       {scheduleKeys.map((item, index) => (
         <TabPanel className='p-4' key={index}>
           {schedule[item].map((i, ind) => (
@@ -34,13 +33,6 @@ export default function TabsComp() {
           ))}
         </TabPanel>
       ))}
-
-      {/* <TabPanel>
-        <h2>Any content 1</h2>
-      </TabPanel>
-      <TabPanel>
-        <h2>Any content 2</h2>
-      </TabPanel> */}
     </Tabs>
   );
 }

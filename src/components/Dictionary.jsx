@@ -79,20 +79,22 @@ export default function Dictionary() {
   };
 
   return (
-    <div className='flex flex-col w-full min-h-screen'>
+    <div className='flex flex-col w-full min-h-[50px]'>
+      <h3 className='text-2xl p-2 font-semibold'>Dictionary</h3>
       <form className='p-2 flex w-' onSubmit={handleSubmit}>
         <input
-          className='p-1 m-2 w-full cursor-pointer  border rounded-md'
+          className='p-1 m-2  cursor-pointer border-r-2 border-blue-400 rounded-lg  border-2'
           type='text'
           value={word}
           onChange={(e) => setWord(e.target.value)}
+          placeholder='Enter a word to search the meaning...'
+          required
         />
         <button
-          className=' bg-blue-400 font-bold text-white p-1 m-2 w-1/6 cursor-pointer  border rounded-md
+          className='  font-bold  p-1 m-2 w-36 cursor-pointer bg-slate-400  border rounded-md
         py-1 px-4
         '
-          type='submit'
-        >
+          type='submit'>
           Search
         </button>
       </form>
