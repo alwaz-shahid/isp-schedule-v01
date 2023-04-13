@@ -1,57 +1,5 @@
 import React, { useState } from 'react';
 
-const sdata = [
-  {
-    word: 'hello',
-    phonetic: 'həˈləʊ',
-    phonetics: [
-      {
-        text: 'həˈləʊ',
-        audio:
-          '//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3',
-      },
-      {
-        text: 'hɛˈləʊ',
-      },
-    ],
-    origin: 'early 19th century: variant of earlier hollo ; related to holla.',
-    meanings: [
-      {
-        partOfSpeech: 'exclamation',
-        definitions: [
-          {
-            definition: 'used as a greeting or to begin a phone conversation.',
-            example: 'hello there, Katie!',
-            synonyms: [],
-            antonyms: [],
-          },
-        ],
-      },
-      {
-        partOfSpeech: 'noun',
-        definitions: [
-          {
-            definition: 'an utterance of ‘hello’; a greeting.',
-            example: 'she was getting polite nods and hellos from people',
-            synonyms: [],
-            antonyms: [],
-          },
-        ],
-      },
-      {
-        partOfSpeech: 'verb',
-        definitions: [
-          {
-            definition: 'say or shout ‘hello’.',
-            example: 'I pressed the phone button and helloed',
-            synonyms: [],
-            antonyms: [],
-          },
-        ],
-      },
-    ],
-  },
-];
 export default function Dictionary() {
   const [word, setWord] = useState(null);
   const [data, setData] = useState(null);
@@ -68,6 +16,7 @@ export default function Dictionary() {
       setData(data);
     } catch (error) {
       setError(true);
+      setData('An error occured');
       // alert(JSON.stringify(error))
     }
     setLoading(false);
@@ -101,7 +50,7 @@ export default function Dictionary() {
       {loading && <p>Loading...</p>}
       {error && <p>Something went wrong</p>}
       {/* {data && <p>{JSON.stringify(data)}</p>} */}
-      {data && (
+      {data ? (
         <div className='p-4 text-start dict'>
           {data?.map(
             ({ word, phonetic, phonetics, origin, meanings }, index) => (
@@ -134,6 +83,8 @@ export default function Dictionary() {
             )
           )}
         </div>
+      ) : (
+        <br />
       )}
     </div>
   );
