@@ -3,7 +3,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { schedule, scheduleKeys } from '../utils/data';
 import SubCard from './datetime/SubCard';
-
 export default function TabsComp() {
   useEffect(() => {}, []);
   return (
@@ -17,8 +16,23 @@ export default function TabsComp() {
           </Tab>
         ))}
       </TabList>
-
-      {scheduleKeys.map((item, index) => (
+      {scheduleKeys.map((day, index) => (
+        <TabPanel key={index}>
+          {schedule[day].map((slot, ind) => (
+            <SubCard
+              key={ind}
+              i={ind}
+              data={slot}
+              // dat={schedule[day]}
+              // day={day}
+              // time={slot.timing}
+              // sname={slot?.subject?.name}
+              // teacher={slot?.subject?.teacher}
+            />
+          ))}
+        </TabPanel>
+      ))}
+      {/* {scheduleKeys.map((item, index) => (
         <TabPanel className='p-4' key={index}>
           {schedule[item].map((i, ind) => (
             <SubCard
@@ -32,7 +46,7 @@ export default function TabsComp() {
             />
           ))}
         </TabPanel>
-      ))}
+      ))} */}
     </Tabs>
   );
 }

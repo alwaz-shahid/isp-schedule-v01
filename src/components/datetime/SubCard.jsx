@@ -1,83 +1,112 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import React, { useEffect, useState } from 'react';
+import { schedule } from '../../utils/data';
 
-export default function SubCard({ day, time, sname, teacher, i }) {
-const [remainingTime, setRemainingTime] = useState(null);
-const [classStatus, setClassStatus] = useState('upcoming');
-const [nextClassDateTime, setNextClassDateTime] = useState(null);
+export default function SubCard({ data }) {
+  const [remainingTime, setRemainingTime] = useState(null);
+  const [classStatus, setClassStatus] = useState('upcoming');
+  const [nextClassDateTime, setNextClassDateTime] = useState(null);
+  const [count, setCount] = useState(0);
 
-useEffect(() => {
-const intervalId = setInterval(() => {
-const now = moment();
-const today = now.format('YYYY-MM-DD');
-const classStart = moment`(${today} ${time[0]} ${day}`);
-const classEnd = moment(`${today} ${time[1]} ${day}`);
-if (now.isBefore(classStart)) {
-  const diff = classStart.diff(now, 'seconds');
-  setRemainingTime(diff);
-  setClassStatus('upcoming');
-} else if (now.isBetween(classStart, classEnd)) {
-  setRemainingTime(null);
-  setClassStatus('ongoing');
-} else {
-  const nextClass = moment(`${today} ${time[0]} ${moment(day).add(1, 'day').format('dddd')}`);
-  setNextClassDateTime(nextClass);
-  setClassStatus('completed');
-}
-}, 1000);
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const today = new Date().getDay();
+  const todayName = daysOfWeek[today];
+  const todayDate = new Date().toLocaleDateString('en-US');
 
-return () => clearInterval(intervalId);
-}, [day, time]);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const currentDayClasses = schedule[todayName];
+      // alert(todayName, currentDayClasses);
+      // alert(currentDayClasses);
+      const currentClass = currentDayClasses.find(
+        (cls) => cls.timing[0] < getCurrentTime()
+      );
 
-let classStatusText = '';
-let remainingTimeText = '';
+      if (!currentClass) {
+        // If no class is currently ongoing, find the next class
+        const nextClass = getNextClass(schedule, todayName, todayDate);
+        if (nextClass) {
+          setClassStatus('upcoming');
+          setNextClassDateTime(nextClass.timing[0]);
+          const secondsRemaining = getSecondsRemaining(
+            todayDate,
+            nextClass.timing[0]
+          );
+          setRemainingTime(secondsRemaining);
+        } else {
+          // No more classes left for the day
+          setClassStatus('completed');
+          setNextClassDateTime(null);
+          setRemainingTime(null);
+        }
+      } else {
+        // A class is currently ongoing
+        setClassStatus('ongoing');
+        setNextClassDateTime(null);
+        const secondsRemaining = getSecondsRemaining(
+          todayDate,
+          currentClass.timing[1]
+        );
+        setRemainingTime(secondsRemaining);
+      }
+    }, 1000);
 
-switch (classStatus) {
-case 'upcoming':
-classStatusText = 'Class starts in';
-remainingTimeText = ${Math.floor( Math.abs(remainingTime) / 3600 )} hours ${Math.floor(Math.abs(remainingTime) / 60) % 60} minutes;
-break;
-case 'ongoing':
-classStatusText = 'Class is ongoing';
-break;
-case 'completed':
-classStatusText = 'Next class';
-remainingTimeText = nextClassDateTime.format('dddd, MMMM Do, h:mm A');
-break;
-default:
-break;
-}
+    setCount((prev) => prev + 1);
+    return () => clearInterval(intervalId);
+  }, []);
 
-return (
-<div className='rounded-md my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover'>
-<div className='flex flex-col p-3'>
-<div className='text-2xl'>
-<span className='p-1 rounded-full text-sm italic font-bold'>
-{i + 1}
-</span>
-<h3 className='text-2xl font-bold'>
-<Label name='subject' />
-{sname}
-</h3>
-<h3 className='text-2xl font-bold'>
-<Label name='teacher' />
-{teacher}
-</h3>
-</div>
-<div className='flex flex-col p-4'>
-<p className='text-xl font-bold py-2 inline-block mb-2'>
-<Label name='time start' />
-{time[0]}
-</p>
-<p className='text-xl font-bold py-2'>
-<Label name='time end' />
-{time[1]}
-</p>
-</div>
-</div>
-<h3 className='md:text-xl text-sm font-bold uppercase py-2 text-center md:text-right px-2 rounded-md'>
-{classStatusText} {remainingTimeText}
-</h3>
-</div>
-);
+  function getNextClass(schedule, todayName, todayDate) {
+    const classes = schedule[todayName];
+    for (let i = 0; i < classes.length; i++) {
+      const cls = classes[i];
+      if (cls.timing[0] > getCurrentTime()) {
+        return cls;
+      }
+    }
+    return null;
+  }
+
+  function getCurrentTime() {
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return `${hours}:${minutes}`;
+  }
+
+  function getSecondsRemaining(date, time) {
+    const dateTime = new Date(`${date} ${time}`);
+    const currentTime = new Date();
+    const diff = dateTime - currentTime;
+    return Math.floor(diff / 1000);
+  }
+
+  let classStatusText = '';
+  let remainingTimeText = '';
+
+  switch (classStatus) {
+    case 'upcoming':
+      classStatusText = 'Class starts in';
+      remainingTimeText = `${Math.floor(
+        Math.abs(remainingTime) / 3600
+      )} hours ${Math.floor(Math.abs(remainingTime) / 60) % 60} minutes`;
+
+      break;
+    case 'ongoing':
+      classStatusText = 'Class is ongoing';
+      remainingTimeText = '';
+      break;
+    case 'completed':
+      classStatusText = 'No more classes today';
+      remainingTimeText = '';
+      break;
+    default:
+      break;
+  }
+  return (
+    <div>
+      {count}
+      {JSON.stringify(data)}
+      {nextClassDateTime || 'none'}
+      {classStatusText}
+    </div>
+  );
 }

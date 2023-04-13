@@ -53,7 +53,7 @@ const courses = {
 };
 
 export const schedule = {
-  mon: [
+  Mon: [
     {
       subject: courses.dbsLab,
       timing: ['09:00 AM', '10:30 AM'],
@@ -63,7 +63,7 @@ export const schedule = {
       timing: ['01:00 PM', '02:30 PM'],
     },
   ],
-  tue: [
+  Tue: [
     {
       subject: courses.islamicStudies,
       timing: ['09:00 AM', '10:30 AM'],
@@ -77,7 +77,7 @@ export const schedule = {
       timing: ['01:00 PM', '02:30 PM'],
     },
   ],
-  wed: [
+  Wed: [
     {
       subject: courses.commSkills1,
       timing: ['09:00 AM', '10:30 AM'],
@@ -87,7 +87,7 @@ export const schedule = {
       timing: ['10:30 AM', '12:00 PM'],
     },
   ],
-  thu: [
+  Thu: [
     {
       subject: courses.coa,
       timing: ['09:00 AM', '10:30 AM'],
@@ -97,7 +97,7 @@ export const schedule = {
       timing: ['12:00 PM', '02:30 PM'],
     },
   ],
-  fri: [
+  Fri: [
     {
       subject: courses.coa,
       timing: ['09:00 AM', '10:30 AM'],
@@ -114,4 +114,4 @@ export const schedule = {
 };
 
 let scheduleKeys = Object.keys(schedule);
-export { scheduleKeys, courses };
+export { scheduleKeys };
