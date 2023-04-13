@@ -65,12 +65,12 @@ export const schedule = {
   ],
   tue: [
     {
-      subject: courses.dbs,
-      timing: ['10:30 AM', '12:00 PM'],
-    },
-    {
       subject: courses.islamicStudies,
       timing: ['09:00 AM', '10:30 AM'],
+    },
+    {
+      subject: courses.dbs,
+      timing: ['10:30 AM', '12:00 PM'],
     },
     {
       subject: courses.commSkills1,
@@ -89,26 +89,22 @@ export const schedule = {
   ],
   thu: [
     {
-      subject: courses.coaLab,
-      timing: ['12:00 PM', '02:30 PM'],
-    },
-    {
       subject: courses.coa,
       timing: ['09:00 AM', '10:30 AM'],
     },
     {
-      subject: courses.dsaLab,
+      subject: courses.coaLab,
       timing: ['12:00 PM', '02:30 PM'],
     },
   ],
   fri: [
     {
-      subject: courses.dsa,
-      timing: ['10:30 AM', '12:00 PM'],
-    },
-    {
       subject: courses.coa,
       timing: ['09:00 AM', '10:30 AM'],
+    },
+    {
+      subject: courses.dsa,
+      timing: ['10:30 AM', '12:00 PM'],
     },
     {
       subject: courses.dsaLab,
