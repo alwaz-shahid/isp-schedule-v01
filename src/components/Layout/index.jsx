@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { now, getSecondsRemaining } from '../../utils/dt';
 
@@ -23,8 +24,13 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
     }
     return 'NEXT CLASS TOMORROW';
   };
+=======
+import React, { useEffect } from 'react';
+import ThemeToggler from '../ThemeToggler';
+>>>>>>> parent of df4de49 (new look and time)
 
   return (
+<<<<<<< HEAD
     <div className=' rounded-md  my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover'>
       <div className='flex flex-col p-3'>
         <div className='text-2xl'>
@@ -56,10 +62,16 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
       <h3 className='md:text-xl text-sm font-bold uppercase py-2 text-center md:text-right px-2 rounded-md '>
         {getClassStatus()}
       </h3>
+=======
+    <div className='min-h-screen min-w-full flex flex-col mx-auto'>
+      <Nav />
+      {children}
+>>>>>>> parent of df4de49 (new look and time)
     </div>
   );
 }
 
+<<<<<<< HEAD
 const Label = ({ name }) => {
   return (
     <span className='opacity-70 underline underline-offset-2 px-2 text-sm italic font-bold'>
@@ -67,3 +79,13 @@ const Label = ({ name }) => {
     </span>
   );
 };
+=======
+const Nav = () => (
+  <nav className='flex justify-between items-center w-full  p-2 bg-[#132E32] dark:bg-[#0A2239] px-3 mb-2'>
+    <ThemeToggler />
+    <h1 className=' md:text-xl text-sm lg:text-2xl font-bold dark:text-red-500 text-indigo-600  '>
+      (beta)-TimeTable for ADP CS (B)
+    </h1>
+  </nav>
+);
+>>>>>>> parent of df4de49 (new look and time)
