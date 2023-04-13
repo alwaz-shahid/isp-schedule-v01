@@ -1,62 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { now, getSecondsRemaining } from '../../utils/dt';
+import { getTimeRemaining } from '../../utils/calcTime';
 
 export default function SubCard({ day, time, sname, teacher, dat, i }) {
-  const [remainingTime, setRemainingTime] = useState(null);
-  const [classStatus, setClassStatus] = useState('upcoming');
-  const [nextClassDateTime, setNextClassDateTime] = useState(null);
-
+  const [status, setStatus] = useState('Loading....');
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const secondsRemaining = getSecondsRemaining(dat, time[0]);
-      setRemainingTime(secondsRemaining);
-
-      if (secondsRemaining < 0 && classStatus === 'upcoming') {
-        setClassStatus('ongoing');
-      } else if (secondsRemaining >= 0 && classStatus === 'ongoing') {
-        setClassStatus('completed');
-      }
-
-      if (classStatus === 'completed') {
-        const nextClassDate = new Date(dat);
-        nextClassDate.setDate(nextClassDate.getDate() + 1);
-        const nextClassTime = `${time[0]} ${day}`;
-        const nextClassDateTime = new Date(
-          `${nextClassDate.toDateString()} ${nextClassTime}`
-        );
-        setNextClassDateTime(nextClassDateTime);
-      }
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, [dat, time, classStatus]);
-
-  let classStatusText = '';
-  let remainingTimeText = '';
-
-  switch (classStatus) {
-    case 'upcoming':
-      classStatusText = 'Class starts in';
-      remainingTimeText = `${Math.floor(
-        Math.abs(remainingTime) / 3600
-      )} hours ${Math.floor(Math.abs(remainingTime) / 60) % 60} minutes`;
-      break;
-    case 'ongoing':
-      classStatusText = 'Class is ongoing';
-      remainingTimeText = '';
-      break;
-    case 'completed':
-      classStatusText = 'Next class';
-      remainingTimeText = nextClassDateTime.toLocaleString([], {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-      });
-      break;
-    default:
-      break;
-  }
+    let currentStatus = getTimeRemaining(time[0], time[1], day);
+    setStatus(currentStatus);
+  }, [setStatus]);
 
   return (
     <div className=' rounded-md  my-5 bg-red-50 drop-shadow-lg dark:bg-[#0A2239] shadow-lg cardhover'>
@@ -88,7 +38,7 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
         </div>
       </div>
       <h3 className='md:text-xl text-sm font-bold uppercase py-2 text-center md:text-right px-2 rounded-md '>
-        {classStatusText} {remainingTimeText}
+        {status}
       </h3>
     </div>
   );
