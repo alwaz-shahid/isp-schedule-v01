@@ -17,27 +17,27 @@ export default function SubCard({ day, time, sname, teacher, dat, i }) {
             {i + 1}
           </span>
 
-          <h3 className='text-2xl font-bold '>
+          <h3 className='text-lg md:text-2xl font-bold '>
             <Label name='subject' />
             {sname}
           </h3>
-          <h3 className='text-2xl font-bold  '>
+          <h3 className='text-lg md:text-2xl font-bold  '>
             <Label name='teacher' />
             {teacher}
           </h3>
         </div>
         <div className='flex flex-col  p-4'>
-          <p className='text-xl font-bold py-2 inline-block mb-2'>
+          <p className=' text-sm md:text-xl font-bold py-2 inline-block mb-2'>
             <Label name='time start' />
             {time[0]}
           </p>
-          <p className='text-xl font-bold py-2'>
+          <p className=' text-sm md:text-xl font-bold py-2'>
             <Label name='time end' />
             {time[1]}
           </p>
         </div>
       </div>
-      <h3 className='md:text-xl text-sm font-bold uppercase py-2 text-center md:text-right px-2 rounded-md '>
+      <h3 className='md:text-xl text-xs font-bold uppercase py-2 text-center md:text-right px-2 rounded-md '>
         {status}
       </h3>
     </div>

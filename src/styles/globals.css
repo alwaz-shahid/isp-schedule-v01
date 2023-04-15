@@ -43,3 +43,144 @@ a {
 .dict p {
   @apply text-lg font-bold p-2 capitalize;
 }
+/* .rect {
+  background: linear-gradient(-119deg, #74b087 0%, #de7300 100%, #74b087);
+} */
+/* using meyers reset */
+
+/* Box-Sizing */
+box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Web Font */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+
+/* body {
+  background-color: black;
+  font-size: 100%;
+  width: 80%;
+  margin: 2em auto 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+} */
+
+section {
+  /*overflow: hidden;*/
+  width: 60em;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+.cover {
+  color: white;
+  width: 40%;
+  margin: 0;
+  padding: 1% 7% 1% 10%;
+  float: left;
+  margin-right: 2em;
+  display: block;
+  /* box-shadow: 0em 0em 5em rgba(10,10,10,0.7); */
+}
+
+.stack {
+  text-transform: uppercase;
+  font-size: 12em;
+  line-height: 0.7em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+span {
+  position: relative;
+}
+
+/* C */
+.char1 {
+  margin-left: -0.2em;
+  z-index: 4;
+  text-shadow: 0.05em 0.05em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* O */
+.char2 {
+  z-index: 3;
+  margin-left: -0.175em;
+  top: 0.08em;
+  text-shadow: -0.02em 0.02em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* M */
+.char3 {
+  z-index: 9;
+  margin-left: -0.125em;
+  text-shadow: -0.05em 0.05em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* P */
+.char4 {
+  z-index: 5;
+  margin-left: -0.175em;
+  text-shadow: 0.02em -0.02em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* U */
+.char5 {
+  z-index: 2;
+  margin-left: -0.125em;
+  top: 0.08em;
+  text-shadow: -0.05em 0.05em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* T */
+.char6 {
+  z-index: 10;
+  margin-left: -0.125em;
+  top: -0.04em;
+  text-shadow: 0em 0em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* A */
+.char7 {
+  z-index: 8;
+  margin-left: -0.3em;
+  top: 0em;
+  text-shadow: -0.05em 0.05em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* T */
+.char8 {
+  z-index: 6;
+  margin-left: -0.135em;
+  top: -0.05em;
+  text-shadow: 0.02em -0.01em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* I */
+.char9 {
+  z-index: 7;
+  margin-left: -0.125em;
+  top: 0em;
+  text-shadow: 0.03em -0.03em 0.2em rgba(10, 10, 10, 0.8);
+}
+
+/* O */
+.char10 {
+  z-index: 1;
+  margin-left: -0.125em;
+  top: 0em;
+  text-shadow: 0.05em -0.05em 0.2em rgba(10, 10, 10, 0.9);
+}
+
+/* N */
+.char11 {
+  z-index: 0;
+  top: -0.04em;
+  margin-left: -0.125em;
+  text-shadow: -0.05em 0.05em 0.2em rgba(10, 10, 10, 0.9);
+}

@@ -8,9 +8,10 @@ export default function HomePage() {
       <Head>
         <title>Schedule</title>
       </Head>
-      <div className='flex flex-col space-y-5 flex-1 p-2'>
+      <div className='flex flex-col flex-1 p-2'>
         <TabsComp />
       </div>
+
       <Dictionary />
     </>
   );

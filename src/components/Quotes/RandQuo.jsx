@@ -39,21 +39,25 @@ export default function RandQuo() {
   };
 
   return (
-    <div className='text-center'>
+    <div className='text-center  py-7 px-2'>
       <button
-        className='p-1 m-2 max-w-fit mx-auto cursor-pointer text-center border rounded-md'
+        className='p-1 m-2 max-w-fit mx-auto cursor-pointer text-center border rounded-md animate-pulse'
         onClick={toggleShow}>
         {show ? 'Hide quote' : 'Show quote'}
       </button>
       {show && (
         <>
-          {loading && <Loader />}
-          {error && <div>Something went wrong</div>}
-          {data && (
-            <>
-              <p>{data.content}</p>
-              <span className=''>- {data.author}</span>
-            </>
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <div>Something went wrong</div>
+          ) : (
+            data && (
+              <>
+                <p>{data.content}</p>
+                <span className=''>- {data.author}</span>
+              </>
+            )
           )}
         </>
       )}

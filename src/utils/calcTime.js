@@ -43,7 +43,7 @@ export function getTimeRemaining(startTime, endTime, targetDay) {
     (remainingEndTime % (1000 * 60 * 60)) / (1000 * 60)
   );
 
-  // Determine the state of the event
+  // Determine the state of the class
   let state = '';
   if (remainingEndTime > 0) {
     state = 'upcoming';
@@ -52,16 +52,16 @@ export function getTimeRemaining(startTime, endTime, targetDay) {
   } else {
     state = 'finished';
   }
-  if (startHours > 36) {
-    return `Next class on ${targetDay}.`;
-  }
+  // if (startHours > 36) {
+  //   return `Next class on ${targetDay}.`;
+  // }
   if (state === 'upcoming') {
-    // Return a string indicating the time remaining or the state of the event
+    // Return a string indicating the time remaining or the state of the class
     return `${startHours} hours and ${startMinutes} minutes remaining until ${startTime}-${endTime} on ${targetDay}.`;
   } else if (state === 'ongoing') {
-    return `The event ${startTime}-${endTime} on ${targetDay} is currently ongoing.`;
+    return `The class ${startTime}-${endTime} on ${targetDay} is currently ongoing.`;
   } else {
-    return `The event ${startTime}-${endTime} on ${targetDay} has finished.`;
+    return `The class ${startTime}-${endTime} on ${targetDay} has ended.`;
   }
 }
 
